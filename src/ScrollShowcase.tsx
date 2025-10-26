@@ -26,30 +26,30 @@ const ScrollShowcase: React.FC = () => {
     <div className="scroll-wrapper">
       <section className="scroll-section">
         <div className="sticky-container">
-          <img src="/images/watch1.png" alt="Watch SE" className="product" />
+          <img src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="PVC Panels" className="product" />
           <div className="text">
-            <h1>Stay one beat ahead.</h1>
-            <p>Get meaningful insights about your health with Apple Watch SE.</p>
+            <h1>Premium PVC Panels</h1>
+            <p>Durable, waterproof, and easy to install. Transform any space with our high-quality PVC paneling solutions.</p>
           </div>
         </div>
       </section>
 
       <section className="scroll-section">
         <div className="sticky-container">
-          <img src="/images/watch2.png" alt="Watch Series 11" className="product" />
+          <img src="https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Charcoal Panels" className="product" />
           <div className="text">
-            <h1>The ultimate watch for a healthy life.</h1>
-            <p>Powerful new chip, precision design, and advanced fitness tracking.</p>
+            <h1>Elegant Charcoal Finish</h1>
+            <p>Modern sophistication meets timeless design. Create stunning interiors with our charcoal panel collection.</p>
           </div>
         </div>
       </section>
 
       <section className="scroll-section">
         <div className="sticky-container">
-          <img src="/images/watch3.png" alt="Apple Watch Family" className="product" />
+          <img src="https://images.pexels.com/photos/1838554/pexels-photo-1838554.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Marble Panels" className="product" />
           <div className="text">
-            <h1>For your kids, for your family.</h1>
-            <p>Stay connected, safe, and active, no matter where you are.</p>
+            <h1>Luxurious Marble Aesthetic</h1>
+            <p>Bring the elegance of natural marble to your space. Premium finishes for discerning homeowners.</p>
           </div>
         </div>
       </section>
