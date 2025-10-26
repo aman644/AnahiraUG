@@ -85,6 +85,12 @@ export default function Header({ onNavigate, cartCount, currentPage }: HeaderPro
                     Gallery
                   </button>
                   <button
+                    onClick={() => onNavigate('scroll-showcase')}
+                    className={`text-sm font-medium transition-colors ${currentPage === 'scroll-showcase' ? 'text-primary-500' : 'text-slate-300 hover:text-white'}`}
+                  >
+                    Showcase
+                  </button>
+                  <button
                     onClick={() => onNavigate('about')}
                     className={`text-sm font-medium transition-colors ${currentPage === 'about' ? 'text-primary-500' : 'text-slate-300 hover:text-white'}`}
                   >
@@ -146,6 +152,12 @@ export default function Header({ onNavigate, cartCount, currentPage }: HeaderPro
                     className="text-left text-sm font-medium text-slate-300 hover:text-white"
                   >
                     Gallery
+                  </button>
+                  <button
+                    onClick={() => { onNavigate('scroll-showcase'); setMobileMenuOpen(false); }}
+                    className="text-left text-sm font-medium text-slate-300 hover:text-white"
+                  >
+                    Showcase
                   </button>
                   <button
                     onClick={() => { onNavigate('about'); setMobileMenuOpen(false); }}
