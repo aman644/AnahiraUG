@@ -13,6 +13,7 @@ import RetailersPage from './pages/RetailersPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import GalleryPage from './pages/GalleryPage';
+import ScrollShowcase from './ScrollShowcase';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -68,6 +69,8 @@ function App() {
         return <ContactPage />;
       case 'gallery':
         return <GalleryPage onNavigate={handleNavigate} />;
+      case 'scroll-showcase':
+        return <ScrollShowcase />;
       default:
         return <HomePage onNavigate={handleNavigate} onAddToCart={handleAddToCart} />;
     }

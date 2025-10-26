@@ -1,0 +1,57 @@
+.scroll-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  background: #000;
+  color: #fff;
+}
+
+.scroll-section {
+  height: 200vh;
+  position: relative;
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.product {
+  width: 45vw;
+  opacity: 0.3;
+  transform: scale(0.9);
+  transition: all 1s ease;
+}
+
+.text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.scroll-section.active .product {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-section.active .text {
+  opacity: 1;
+  transform: none;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.4em;
+}
+
+p {
+  font-size: 1.2em;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
