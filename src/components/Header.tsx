@@ -20,9 +20,9 @@ export default function Header({ onNavigate, cartCount, currentPage }: HeaderPro
               <div className="flex items-center gap-8">
                 <button onClick={() => onNavigate('home')} className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-primary-600 rounded flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">P</span>
+                    <span className="text-white font-bold text-lg">A</span>
                   </div>
-                  <span className="font-bold text-xl text-white">Premier Products</span>
+                  <span className="font-bold text-xl text-white">Anahira Berlin</span>
                 </button>
 
                 <nav className="hidden md:flex gap-6 items-center">
