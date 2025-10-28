@@ -62,23 +62,23 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-fadeInUp">Transform Your Spaces</h1>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-fadeInUp">Bridging India & Germany</h1>
               <p className="text-xl md:text-2xl text-slate-300 mb-10 animate-fadeInUp" style={{animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards'}}>
-                Premium architectural finishes that elevate every interior. From elegant fluted panels to sophisticated wallpapers.
+                Your trusted partner for premium home interior products from India to Germany. Quality materials, seamless logistics, exceptional service.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fadeInUp" style={{animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards'}}>
                 <button
                   onClick={() => onNavigate('products')}
                   className="cta-button inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
                 >
-                  Explore Products
+                  View Catalog
                   <ArrowRight className="w-5 h-5" />
                 </button>
                 <button
-                  onClick={() => onNavigate('installers')}
+                  onClick={() => onNavigate('contact')}
                   className="cta-button inline-flex items-center justify-center gap-2 bg-transparent border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors"
                 >
-                  Find Installers
+                  Contact Us
                 </button>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
                     className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-white/10 transform group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span className="text-white font-bold text-sm">PVC Panels</span>
+                    <span className="text-white font-bold text-sm">Wall Panels</span>
                   </div>
                 </div>
 
@@ -107,7 +107,7 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
                     className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-white/10 transform group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span className="text-white font-bold text-sm">Charcoal Finish</span>
+                    <span className="text-white font-bold text-sm">Fluted Panels</span>
                   </div>
                 </div>
 
@@ -128,41 +128,41 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
         </div>
       </section>
 
-      <section ref={section1.ref} className={`py-24 bg-[#1F2121]/40 backdrop-blur-sm rounded-3xl mx-4 mb-8 scroll-fade-in ${section1.isVisible ? 'visible' : ''}`}>
+      <section ref={section1.ref} className={`py-24 bg-white/50 backdrop-blur-sm rounded-3xl mx-4 mb-8 scroll-fade-in ${section1.isVisible ? 'visible' : ''}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <div className="inline-flex items-center gap-2 bg-primary-600/20 px-4 py-2 rounded-full mb-6">
                 <Waves className="w-5 h-5 text-primary-600" />
-                <span className="text-sm font-semibold text-primary-600">FLUTED PANELS</span>
+                <span className="text-sm font-semibold text-primary-600">PREMIUM MATERIALS</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Elegant Texture & Depth</h2>
-              <p className="text-lg text-slate-300 mb-6">
-                Our fluted panels bring sophisticated three-dimensional texture to any wall. Perfect for accent walls, headboards, and feature areas that demand attention.
+              <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-6">Sourced from India's Finest</h2>
+              <p className="text-lg text-neutral-600 mb-6">
+                We import premium home interior materials directly from India's leading manufacturers, bringing authentic quality and competitive pricing to the German market.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '100ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Easy installation with pre-finished surfaces</span>
+                  <span className="text-neutral-600">Direct sourcing from verified Indian manufacturers</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '200ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Multiple finishes: wood veneer, painted, and textured</span>
+                  <span className="text-neutral-600">Quality inspected before shipping to Germany</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Acoustic benefits for sound dampening</span>
+                  <span className="text-neutral-600">Competitive pricing with bulk order options</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '400ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Available in standard and custom dimensions</span>
+                  <span className="text-neutral-600">Wide range of styles and finishes available</span>
                 </li>
               </ul>
               <button
                 onClick={() => onNavigate('products')}
                 className="cta-button inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
               >
-                View Fluted Panels
+                View Product Range
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -179,50 +179,50 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
         </div>
       </section>
 
-      <section className="py-24 bg-[#1F2121]/60 backdrop-blur-sm rounded-3xl mx-4 mb-8">
+      <section className="py-24 bg-white/50 backdrop-blur-sm rounded-3xl mx-4 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="group">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[rgb(59 130 246)]/20 to-[rgb(59 130 246)]/10 overflow-hidden shadow-2xl border border-white/5 transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(33,128,141,0.3)] group-hover:scale-[1.02]">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary-200/50 to-primary-100/30 overflow-hidden shadow-2xl border border-primary-200/30 transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(184,160,124,0.3)] group-hover:scale-[1.02]">
                 <img
-                  src="https://images.pexels.com/photos/6585607/pexels-photo-6585607.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="PVC wall panels"
+                  src="https://images.pexels.com/photos/8486020/pexels-photo-8486020.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Reliable logistics"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
             </div>
             <div>
               <div className="inline-flex items-center gap-2 bg-primary-600/20 px-4 py-2 rounded-full mb-6">
-                <Droplet className="w-5 h-5 text-primary-600" />
-                <span className="text-sm font-semibold text-primary-600">PVC PANELS</span>
+                <Truck className="w-5 h-5 text-primary-600" />
+                <span className="text-sm font-semibold text-primary-600">LOGISTICS & DELIVERY</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Built to Last</h2>
-              <p className="text-lg text-slate-300 mb-6">
-                Engineered for moisture resistance and exceptional durability, our PVC panels are ideal for bathrooms, kitchens, and high-traffic commercial spaces.
+              <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-6">Seamless International Shipping</h2>
+              <p className="text-lg text-neutral-600 mb-6">
+                We handle all aspects of international logistics, from customs clearance to final delivery, ensuring your products arrive safely and on time.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '100ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">100% waterproof and mold-resistant</span>
+                  <span className="text-neutral-600">End-to-end logistics management</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '200ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Low maintenance with easy-to-clean surfaces</span>
+                  <span className="text-neutral-600">Customs documentation and clearance handled</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Cost-effective alternative to tile or wood</span>
+                  <span className="text-neutral-600">Real-time shipment tracking</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '400ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Perfect for high-humidity environments</span>
+                  <span className="text-neutral-600">Secure packaging for international transit</span>
                 </li>
               </ul>
               <button
-                onClick={() => onNavigate('products')}
+                onClick={() => onNavigate('contact')}
                 className="cta-button inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
               >
-                View PVC Panels
+                Learn More
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -230,49 +230,49 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
         </div>
       </section>
 
-      <section className="py-24 bg-[#1F2121]/40 backdrop-blur-sm rounded-3xl mx-4 mb-8">
+      <section className="py-24 bg-primary-50/40 backdrop-blur-sm rounded-3xl mx-4 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <div className="inline-flex items-center gap-2 bg-primary-600/20 px-4 py-2 rounded-full mb-6">
-                <Sparkles className="w-5 h-5 text-primary-600" />
-                <span className="text-sm font-semibold text-primary-600">WALLPAPERS</span>
+                <Shield className="w-5 h-5 text-primary-600" />
+                <span className="text-sm font-semibold text-primary-600">QUALITY ASSURANCE</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Design Without Limits</h2>
-              <p className="text-lg text-slate-300 mb-6">
-                From classic patterns to contemporary murals, our curated wallpaper collection offers endless possibilities for personalization and style.
+              <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-6">Certified & Verified</h2>
+              <p className="text-lg text-neutral-600 mb-6">
+                Every product meets international quality standards. We work exclusively with ISO-certified manufacturers and conduct rigorous quality checks.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '100ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Premium materials: vinyl, fabric, and textured options</span>
+                  <span className="text-neutral-600">ISO-certified manufacturer partnerships</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '200ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Washable and fade-resistant finishes</span>
+                  <span className="text-neutral-600">Pre-shipment quality inspection</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Custom sizing and design services available</span>
+                  <span className="text-neutral-600">European safety and compliance standards</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '400ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Extensive pattern library with exclusive designs</span>
+                  <span className="text-neutral-600">Comprehensive warranty coverage</span>
                 </li>
               </ul>
               <button
-                onClick={() => onNavigate('products')}
+                onClick={() => onNavigate('about')}
                 className="cta-button inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
               >
-                View Wallpapers
+                About Our Standards
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
             <div className="order-1 md:order-2 group">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[rgb(59 130 246)]/20 to-[rgb(59 130 246)]/10 overflow-hidden shadow-2xl border border-white/5 transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(33,128,141,0.3)] group-hover:scale-[1.02]">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary-200/50 to-primary-100/30 overflow-hidden shadow-2xl border border-primary-200/30 transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(184,160,124,0.3)] group-hover:scale-[1.02]">
                 <img
-                  src="https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Premium wallpaper designs"
+                  src="https://images.pexels.com/photos/5668838/pexels-photo-5668838.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Quality assurance"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
@@ -281,50 +281,50 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
         </div>
       </section>
 
-      <section className="py-24 bg-[#1F2121]/60 backdrop-blur-sm rounded-3xl mx-4 mb-8">
+      <section className="py-24 bg-white/50 backdrop-blur-sm rounded-3xl mx-4 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="group">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[rgb(59 130 246)]/20 to-[rgb(59 130 246)]/10 overflow-hidden shadow-2xl border border-white/5 transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(33,128,141,0.3)] group-hover:scale-[1.02]">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary-200/50 to-primary-100/30 overflow-hidden shadow-2xl border border-primary-200/30 transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(184,160,124,0.3)] group-hover:scale-[1.02]">
                 <img
-                  src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Charcoal louvers"
+                  src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Customer support"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
             </div>
             <div>
               <div className="inline-flex items-center gap-2 bg-primary-600/20 px-4 py-2 rounded-full mb-6">
-                <Wind className="w-5 h-5 text-primary-600" />
-                <span className="text-sm font-semibold text-primary-600">CHARCOAL LOUVERS</span>
+                <Users className="w-5 h-5 text-primary-600" />
+                <span className="text-sm font-semibold text-primary-600">DEDICATED SUPPORT</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Form Meets Function</h2>
-              <p className="text-lg text-slate-300 mb-6">
-                Architectural louvers that provide privacy, ventilation, and striking visual appeal. Perfect for modern facades, screens, and decorative partitions.
+              <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-6">Your Success Partner</h2>
+              <p className="text-lg text-neutral-600 mb-6">
+                Our bilingual team provides personalized support in German and English, helping you from product selection to final delivery.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '100ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Weather-resistant charcoal finish</span>
+                  <span className="text-neutral-600">Bilingual support (German & English)</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '200ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Customizable spacing and orientation</span>
+                  <span className="text-neutral-600">Product consultation and recommendations</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '300ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Ideal for both interior and exterior applications</span>
+                  <span className="text-neutral-600">Custom order assistance</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-0 animate-fadeIn" style={{animationDelay: '400ms', animationFillMode: 'forwards'}}>
                   <Check className="w-6 h-6 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Provides privacy while maintaining airflow</span>
+                  <span className="text-neutral-600">After-sales support and warranty service</span>
                 </li>
               </ul>
               <button
-                onClick={() => onNavigate('products')}
+                onClick={() => onNavigate('contact')}
                 className="cta-button inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
               >
-                View Louvers
+                Get in Touch
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -332,74 +332,6 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
         </div>
       </section>
 
-      <section className="py-24 bg-[#1F2121]/40 backdrop-blur-sm rounded-3xl mx-4 mb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Compare Our Products</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Find the perfect solution for your project. Each product is designed for specific applications and aesthetic goals.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b-2 border-primary-600">
-                  <th className="text-left py-4 px-4 font-bold text-white">Feature</th>
-                  <th className="text-center py-4 px-4 font-bold text-white">Fluted Panels</th>
-                  <th className="text-center py-4 px-4 font-bold text-white">PVC Panels</th>
-                  <th className="text-center py-4 px-4 font-bold text-white">Wallpapers</th>
-                  <th className="text-center py-4 px-4 font-bold text-white">Charcoal Louvers</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 font-medium text-slate-300">Waterproof</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Partial</td>
-                  <td className="text-center py-4 px-4 text-primary-600 font-semibold">Yes</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Varies</td>
-                  <td className="text-center py-4 px-4 text-primary-600 font-semibold">Yes</td>
-                </tr>
-                <tr className="border-b border-white/10 bg-white/5">
-                  <td className="py-4 px-4 font-medium text-slate-300">Installation Difficulty</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Moderate</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Easy</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Easy</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Moderate</td>
-                </tr>
-                <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 font-medium text-slate-300">Texture/Depth</td>
-                  <td className="text-center py-4 px-4 text-primary-600 font-semibold">3D</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Flat</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Varies</td>
-                  <td className="text-center py-4 px-4 text-primary-600 font-semibold">3D</td>
-                </tr>
-                <tr className="border-b border-white/10 bg-white/5">
-                  <td className="py-4 px-4 font-medium text-slate-300">Best For</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Accent Walls</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Bathrooms</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Full Rooms</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Facades</td>
-                </tr>
-                <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 font-medium text-slate-300">Durability</td>
-                  <td className="text-center py-4 px-4 text-slate-400">High</td>
-                  <td className="text-center py-4 px-4 text-primary-600 font-semibold">Very High</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Medium</td>
-                  <td className="text-center py-4 px-4 text-primary-600 font-semibold">Very High</td>
-                </tr>
-                <tr className="border-b border-white/10 bg-white/5">
-                  <td className="py-4 px-4 font-medium text-slate-300">Customization</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Limited</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Limited</td>
-                  <td className="text-center py-4 px-4 text-primary-600 font-semibold">Extensive</td>
-                  <td className="text-center py-4 px-4 text-slate-400">Moderate</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
 
       <section className="py-20 mx-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -408,40 +340,40 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-2 text-white">Premium Quality</h3>
-              <p className="text-slate-300">Top-tier products from trusted manufacturers</p>
+              <h3 className="font-semibold text-lg mb-2 text-neutral-800">Premium Quality</h3>
+              <p className="text-neutral-600">Certified Indian manufacturers</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
                 <Truck className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-2 text-white">Fast Shipping</h3>
-              <p className="text-slate-300">Quick delivery with transparent lead times</p>
+              <h3 className="font-semibold text-lg mb-2 text-neutral-800">Direct Import</h3>
+              <p className="text-neutral-600">India to Germany shipping</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-2 text-white">Installer Network</h3>
-              <p className="text-slate-300">Vetted professionals ready to help</p>
+              <h3 className="font-semibold text-lg mb-2 text-neutral-800">Expert Support</h3>
+              <p className="text-neutral-600">Bilingual customer service</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-2 text-white">Trade Pricing</h3>
-              <p className="text-slate-300">Exclusive discounts for professionals</p>
+              <h3 className="font-semibold text-lg mb-2 text-neutral-800">Best Prices</h3>
+              <p className="text-neutral-600">Competitive import pricing</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-[#1F2121]/60 backdrop-blur-sm rounded-3xl mx-4 mb-8">
+      <section className="py-20 bg-primary-50/40 backdrop-blur-sm rounded-3xl mx-4 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Products</h2>
-              <p className="text-lg text-slate-300">Discover our most popular items</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">Featured Products</h2>
+              <p className="text-lg text-neutral-600">Imported directly from India</p>
             </div>
             <button
               onClick={() => onNavigate('products')}
@@ -455,7 +387,7 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
           {loading ? (
             <div className="grid md:grid-cols-3 gap-8">
               {[1, 2, 3].map(i => (
-                <div key={i} className="bg-white/5 rounded-lg h-96 animate-pulse"></div>
+                <div key={i} className="bg-primary-100/30 rounded-lg h-96 animate-pulse"></div>
               ))}
             </div>
           ) : featuredProducts.length > 0 ? (
@@ -471,33 +403,33 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-slate-300">No featured products available yet.</p>
+              <p className="text-neutral-600">No featured products available yet.</p>
             </div>
           )}
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-[#1F2121] via-[#252727] to-[#1F2121] text-white relative overflow-hidden rounded-3xl mx-4 mb-8">
+      <section className="py-24 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-800 text-white relative overflow-hidden rounded-3xl mx-4 mb-8">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDEzNGgxMHYxMEgzNnptMC0xMGgxMHYxMEgzNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready for Bulk Orders?</h2>
-            <p className="text-xl text-slate-300 mb-4 max-w-3xl mx-auto">
-              Whether you're a contractor, designer, or retailer, we've got you covered with competitive pricing and dedicated support.
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Start Importing Today</h2>
+            <p className="text-xl text-neutral-100 mb-4 max-w-3xl mx-auto">
+              Ready to bring premium Indian home interior products to Germany? We make international trade simple and reliable.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-primary-800" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Trade Program</h3>
-              <p className="text-slate-300 mb-4">
-                Exclusive pricing tiers, net payment terms, and priority customer support for verified professionals.
+              <h3 className="text-xl font-bold mb-3">For Retailers</h3>
+              <p className="text-neutral-100 mb-4">
+                Wholesale pricing, dropshipping options, and marketing support. Build your inventory with authentic Indian products.
               </p>
               <button
-                onClick={() => onNavigate('trade')}
+                onClick={() => onNavigate('retailers')}
                 className="text-white font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all"
               >
                 Learn More
@@ -506,29 +438,29 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                <Truck className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4">
+                <Truck className="w-6 h-6 text-primary-800" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Volume Discounts</h3>
-              <p className="text-slate-300 mb-4">
-                Save more when you order more. Get instant volume pricing on all products with no minimum requirements.
+              <h3 className="text-xl font-bold mb-3">Bulk Orders</h3>
+              <p className="text-neutral-100 mb-4">
+                Volume discounts for contractors and designers. Competitive pricing for large projects with flexible payment terms.
               </p>
               <button
-                onClick={() => onNavigate('products')}
+                onClick={() => onNavigate('contact')}
                 className="text-white font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all"
               >
-                View Products
+                Request Quote
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-primary-800" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Retailer Partners</h3>
-              <p className="text-slate-300 mb-4">
-                Stock our products in your showroom. Access wholesale pricing, marketing support, and dedicated account management.
+              <h3 className="text-xl font-bold mb-3">Trade Partners</h3>
+              <p className="text-neutral-100 mb-4">
+                Become our distribution partner in Germany. Exclusive territories, full support, and premium profit margins.
               </p>
               <button
                 onClick={() => onNavigate('trade')}
@@ -542,14 +474,14 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
 
           <div className="text-center">
             <button
-              onClick={() => onNavigate('trade')}
-              className="cta-button inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg"
+              onClick={() => onNavigate('contact')}
+              className="cta-button inline-flex items-center gap-2 bg-white text-primary-800 px-8 py-4 rounded-lg font-semibold hover:bg-neutral-100 transition-colors text-lg"
             >
               Get Started Today
               <ArrowRight className="w-5 h-5" />
             </button>
-            <p className="text-slate-400 mt-4 text-sm">
-              Have questions? Contact our sales team for custom pricing and solutions.
+            <p className="text-neutral-200 mt-4 text-sm">
+              Questions? Our team is here to help with quotes, samples, and shipping details.
             </p>
           </div>
         </div>
