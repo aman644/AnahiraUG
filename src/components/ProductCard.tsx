@@ -1,4 +1,4 @@
-import { ShoppingCart } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 interface Product {
   id: string;
@@ -15,11 +15,10 @@ interface Product {
 interface ProductCardProps {
   product: Product;
   onViewDetails: (productId: string) => void;
-  onAddToCart: (productId: string) => void;
   showTradePrice?: boolean;
 }
 
-export default function ProductCard({ product, onViewDetails, onAddToCart, showTradePrice }: ProductCardProps) {
+export default function ProductCard({ product, onViewDetails, showTradePrice }: ProductCardProps) {
   const imageUrl = product.images?.[0]?.image_url || 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=600';
   const price = showTradePrice && product.trade_price ? product.trade_price : product.retail_price;
 
@@ -55,16 +54,16 @@ export default function ProductCard({ product, onViewDetails, onAddToCart, showT
           <div className="flex gap-2">
             <button
               onClick={() => onViewDetails(product.id)}
-              className="px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-100 rounded-lg transition-colors"
+              className="px-4 py-2 text-sm font-medium text-neutral-800 bg-primary-100 hover:bg-primary-200 rounded-lg transition-colors"
             >
               View Details
             </button>
             <button
-              onClick={() => onAddToCart(product.id)}
-              className="p-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors"
-              disabled={product.stock_status === 'out_of_stock'}
+              onClick={() => onViewDetails(product.id)}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
             >
-              <ShoppingCart className="w-5 h-5" />
+              <Mail className="w-4 h-4" />
+              Inquire
             </button>
           </div>
         </div>

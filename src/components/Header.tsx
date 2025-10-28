@@ -1,13 +1,12 @@
-import { ShoppingCart, User, Search, Menu, ChevronDown } from 'lucide-react';
+import { Phone, Mail, Menu, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
-  cartCount: number;
   currentPage: string;
 }
 
-export default function Header({ onNavigate, cartCount, currentPage }: HeaderProps) {
+export default function Header({ onNavigate, currentPage }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
@@ -106,22 +105,19 @@ export default function Header({ onNavigate, cartCount, currentPage }: HeaderPro
               </div>
 
               <div className="flex items-center gap-4">
-                <button className="p-2 text-slate-300 hover:text-white transition-colors">
-                  <Search className="w-5 h-5" />
+                <button
+                  onClick={() => onNavigate('contact')}
+                  className="hidden md:flex items-center gap-2 p-2 text-slate-300 hover:text-white transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span className="text-sm">Contact</span>
                 </button>
                 <button
-                  onClick={() => onNavigate('cart')}
-                  className="p-2 text-slate-300 hover:text-white transition-colors relative"
+                  onClick={() => onNavigate('contact')}
+                  className="hidden md:flex items-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors"
                 >
-                  <ShoppingCart className="w-5 h-5" />
-                  {cartCount > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                      {cartCount}
-                    </span>
-                  )}
-                </button>
-                <button className="p-2 text-slate-300 hover:text-white transition-colors">
-                  <User className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
+                  <span className="text-sm font-semibold">Request Quote</span>
                 </button>
                 <button
                   className="md:hidden p-2 text-slate-300 hover:text-white"

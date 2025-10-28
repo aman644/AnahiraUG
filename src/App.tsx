@@ -8,7 +8,6 @@ import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import InstallersPage from './pages/InstallersPage';
 import TradeProgramPage from './pages/TradeProgramPage';
-import CartPage from './pages/CartPage';
 import RetailersPage from './pages/RetailersPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -19,7 +18,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState('home');
   const [pageData, setPageData] = useState<any>(null);
-  const [cartItems, setCartItems] = useState<string[]>([]);
 
   const handleNavigate = (page: string, data?: any) => {
     setCurrentPage(page);
@@ -27,22 +25,18 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  const handleAddToCart = (productId: string) => {
-    setCartItems([...cartItems, productId]);
-  };
 
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage onNavigate={handleNavigate} onAddToCart={handleAddToCart} />;
+        return <HomePage onNavigate={handleNavigate} />;
       case 'products':
-        return <ProductsPage onNavigate={handleNavigate} onAddToCart={handleAddToCart} />;
+        return <ProductsPage onNavigate={handleNavigate} />;
       case 'product-detail':
         return (
           <ProductDetailPage
             productId={pageData?.productId}
             onNavigate={handleNavigate}
-            onAddToCart={handleAddToCart}
           />
         );
       case 'projects':
@@ -52,15 +46,12 @@ function App() {
           <ProjectDetailPage
             projectId={pageData?.projectId}
             onNavigate={handleNavigate}
-            onAddToCart={handleAddToCart}
           />
         );
       case 'installers':
         return <InstallersPage onNavigate={handleNavigate} />;
       case 'trade':
         return <TradeProgramPage onNavigate={handleNavigate} />;
-      case 'cart':
-        return <CartPage onNavigate={handleNavigate} cartItems={cartItems} onUpdateCart={setCartItems} />;
       case 'retailers':
         return <RetailersPage onNavigate={handleNavigate} />;
       case 'about':
@@ -72,7 +63,7 @@ function App() {
       case 'scroll-showcase':
         return <ScrollShowcase />;
       default:
-        return <HomePage onNavigate={handleNavigate} onAddToCart={handleAddToCart} />;
+        return <HomePage onNavigate={handleNavigate} />;
     }
   };
 
@@ -82,7 +73,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <Header onNavigate={handleNavigate} cartCount={cartItems.length} currentPage={currentPage} />
+      <Header onNavigate={handleNavigate} currentPage={currentPage} />
       {renderPage()}
     </div>
   );

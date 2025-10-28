@@ -7,10 +7,9 @@ import { useScrollAnimation, useParallax } from '../hooks/useScrollAnimation';
 
 interface HomePageProps {
   onNavigate: (page: string, data?: any) => void;
-  onAddToCart: (productId: string) => void;
 }
 
-export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
+export default function HomePage({ onNavigate }: HomePageProps) {
   const [featuredProducts, setFeaturedProducts] = useState<any[]>([]);
   const [featuredProjects, setFeaturedProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -397,7 +396,6 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
                   key={product.id}
                   product={product}
                   onViewDetails={(id) => onNavigate('product-detail', { productId: id })}
-                  onAddToCart={onAddToCart}
                 />
               ))}
             </div>
