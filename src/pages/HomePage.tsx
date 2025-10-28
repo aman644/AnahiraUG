@@ -54,25 +54,76 @@ export default function HomePage({ onNavigate, onAddToCart }: HomePageProps) {
           className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDEzNGgxMHYxMEgzNnptMC0xMGgxMHYxMEgzNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"
           style={{ transform: `translateY(${parallaxOffset * 0.3}px)` }}
         ></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-fadeInUp">Transform Your Spaces</h1>
-          <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto animate-fadeInUp" style={{animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards'}}>
-            Premium architectural finishes that elevate every interior. From elegant fluted panels to sophisticated wallpapers.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp" style={{animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards'}}>
-            <button
-              onClick={() => onNavigate('products')}
-              className="cta-button inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
-            >
-              Explore Products
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => onNavigate('installers')}
-              className="cta-button inline-flex items-center justify-center gap-2 bg-transparent border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors"
-            >
-              Find Installers
-            </button>
+
+        <div className="absolute top-10 left-10 w-32 h-32 bg-primary-600/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-cyan-500/20 rounded-full blur-2xl animate-float" style={{animationDelay: '4s'}}></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-center md:text-left">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-fadeInUp">Transform Your Spaces</h1>
+              <p className="text-xl md:text-2xl text-slate-300 mb-10 animate-fadeInUp" style={{animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards'}}>
+                Premium architectural finishes that elevate every interior. From elegant fluted panels to sophisticated wallpapers.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fadeInUp" style={{animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards'}}>
+                <button
+                  onClick={() => onNavigate('products')}
+                  className="cta-button inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                >
+                  Explore Products
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => onNavigate('installers')}
+                  className="cta-button inline-flex items-center justify-center gap-2 bg-transparent border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors"
+                >
+                  Find Installers
+                </button>
+              </div>
+            </div>
+
+            <div className="relative animate-fadeInUp" style={{animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards'}}>
+              <div className="relative aspect-square max-w-md mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-600/40 to-blue-600/40 rounded-full blur-3xl animate-pulse"></div>
+
+                <div className="absolute top-0 left-0 w-48 h-48 group cursor-pointer">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-transparent rounded-2xl rotate-12 group-hover:rotate-0 transition-transform duration-500"></div>
+                  <img
+                    src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    alt="PVC Panels"
+                    className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-white/10 transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-bold text-sm">PVC Panels</span>
+                  </div>
+                </div>
+
+                <div className="absolute top-1/4 right-0 w-44 h-44 group cursor-pointer" style={{animationDelay: '0.8s'}}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent rounded-2xl -rotate-12 group-hover:rotate-0 transition-transform duration-500"></div>
+                  <img
+                    src="https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    alt="Charcoal Panels"
+                    className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-white/10 transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-bold text-sm">Charcoal Finish</span>
+                  </div>
+                </div>
+
+                <div className="absolute bottom-0 left-1/4 w-52 h-52 group cursor-pointer" style={{animationDelay: '1s'}}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-transparent rounded-2xl rotate-6 group-hover:rotate-0 transition-transform duration-500"></div>
+                  <img
+                    src="https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    alt="Wallpapers"
+                    className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-white/10 transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-bold text-sm">Premium Wallpapers</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
