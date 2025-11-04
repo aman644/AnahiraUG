@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
 import ProductCard from '../components/ProductCard';
+import QuoteRequestModal from '../components/QuoteRequestModal';
 import { Filter, SlidersHorizontal } from 'lucide-react';
 
 interface ProductsPageProps {
@@ -19,6 +20,8 @@ export default function ProductsPage({ onNavigate }: ProductsPageProps) {
     sortBy: 'name'
   });
   const [showFilters, setShowFilters] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<{ id: string; name: string } | null>(null);
 
   useEffect(() => {
     loadCategories();
@@ -224,6 +227,10 @@ export default function ProductsPage({ onNavigate }: ProductsPageProps) {
                     key={product.id}
                     product={product}
                     onViewDetails={(id) => onNavigate('product-detail', { productId: id })}
+                    onGetQuote={(id, name) => {
+                      setSelectedProduct({ id, name });
+                      setIsQuoteModalOpen(true);
+                    }}
                   />
                 ))}
               </div>
@@ -235,6 +242,18 @@ export default function ProductsPage({ onNavigate }: ProductsPageProps) {
           </main>
         </div>
       </div>
+
+      {selectedProduct && (
+        <QuoteRequestModal
+          isOpen={isQuoteModalOpen}
+          onClose={() => {
+            setIsQuoteModalOpen(false);
+            setSelectedProduct(null);
+          }}
+          productId={selectedProduct.id}
+          productName={selectedProduct.name}
+        />
+      )}
     </div>
   );
 }

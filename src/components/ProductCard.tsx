@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 interface Product {
   id: string;
@@ -15,12 +15,11 @@ interface Product {
 interface ProductCardProps {
   product: Product;
   onViewDetails: (productId: string) => void;
-  showTradePrice?: boolean;
+  onGetQuote: (productId: string, productName: string) => void;
 }
 
-export default function ProductCard({ product, onViewDetails, showTradePrice }: ProductCardProps) {
+export default function ProductCard({ product, onViewDetails, onGetQuote }: ProductCardProps) {
   const imageUrl = product.images?.[0]?.image_url || 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=600';
-  const price = showTradePrice && product.trade_price ? product.trade_price : product.retail_price;
 
   return (
     <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
@@ -44,28 +43,20 @@ export default function ProductCard({ product, onViewDetails, showTradePrice }: 
       <div className="p-5">
         <h3 className="font-semibold text-lg text-slate-900 mb-2 line-clamp-1">{product.name}</h3>
         <p className="text-sm text-slate-600 mb-4 line-clamp-2">{product.short_description}</p>
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-2xl font-bold text-slate-900">${price.toFixed(2)}</p>
-            {showTradePrice && product.trade_price && (
-              <p className="text-xs text-slate-500 line-through">${product.retail_price.toFixed(2)}</p>
-            )}
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={() => onViewDetails(product.id)}
-              className="px-4 py-2 text-sm font-medium text-neutral-800 bg-primary-100 hover:bg-primary-200 rounded-lg transition-colors"
-            >
-              View Details
-            </button>
-            <button
-              onClick={() => onViewDetails(product.id)}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
-            >
-              <Mail className="w-4 h-4" />
-              Inquire
-            </button>
-          </div>
+        <div className="flex gap-2">
+          <button
+            onClick={() => onViewDetails(product.id)}
+            className="flex-1 px-4 py-2.5 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+          >
+            View Details
+          </button>
+          <button
+            onClick={() => onGetQuote(product.id, product.name)}
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
+          >
+            <FileText className="w-4 h-4" />
+            Get Quote
+          </button>
         </div>
       </div>
     </div>

@@ -1,18 +1,19 @@
 import { useEffect, useState, useRef } from 'react';
 import { supabase } from '../lib/supabase';
-import { ShoppingCart, ArrowLeft, ChevronDown } from 'lucide-react';
+import { FileText, ArrowLeft, ChevronDown } from 'lucide-react';
+import QuoteRequestModal from '../components/QuoteRequestModal';
 
 interface ProductDetailPageProps {
   productId: string;
   onNavigate: (page: string, data?: any) => void;
-  onAddToCart: (productId: string) => void;
 }
 
-export default function ProductDetailPage({ productId, onNavigate, onAddToCart }: ProductDetailPageProps) {
+export default function ProductDetailPage({ productId, onNavigate }: ProductDetailPageProps) {
   const [product, setProduct] = useState<any>(null);
   const [images, setImages] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [scrollY, setScrollY] = useState(0);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -76,12 +77,11 @@ export default function ProductDetailPage({ productId, onNavigate, onAddToCart }
           </button>
 
           <button
-            onClick={() => onAddToCart(product.id)}
-            disabled={product.stock_status === 'out_of_stock'}
-            className="inline-flex items-center gap-2 bg-white text-black px-6 py-2.5 rounded-full font-medium hover:bg-slate-200 transition-all disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed text-sm"
+            onClick={() => setIsQuoteModalOpen(true)}
+            className="inline-flex items-center gap-2 bg-white text-black px-6 py-2.5 rounded-full font-medium hover:bg-slate-200 transition-all text-sm"
           >
-            <ShoppingCart className="w-4 h-4" />
-            {product.stock_status === 'out_of_stock' ? 'Out of Stock' : 'Add to Cart'}
+            <FileText className="w-4 h-4" />
+            Get Quote
           </button>
         </div>
       </div>
@@ -116,12 +116,13 @@ export default function ProductDetailPage({ productId, onNavigate, onAddToCart }
             <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
               {product.short_description}
             </p>
-            <div className="flex items-center justify-center gap-6">
-              <p className="text-3xl md:text-4xl font-semibold">${product.retail_price.toFixed(2)}</p>
-              {product.trade_price && (
-                <p className="text-lg text-slate-400">Trade: ${product.trade_price.toFixed(2)}</p>
-              )}
-            </div>
+            <button
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-slate-200 transition-all text-lg pointer-events-auto"
+            >
+              <FileText className="w-5 h-5" />
+              Request a Quote
+            </button>
           </div>
         </div>
 
@@ -234,12 +235,11 @@ export default function ProductDetailPage({ productId, onNavigate, onAddToCart }
             </dl>
 
             <button
-              onClick={() => onAddToCart(product.id)}
-              disabled={product.stock_status === 'out_of_stock'}
-              className="mt-12 inline-flex items-center gap-3 bg-white text-black px-12 py-5 rounded-full font-semibold hover:bg-slate-200 transition-all disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed text-lg shadow-xl"
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="mt-12 inline-flex items-center gap-3 bg-white text-black px-12 py-5 rounded-full font-semibold hover:bg-slate-200 transition-all text-lg shadow-xl"
             >
-              <ShoppingCart className="w-5 h-5" />
-              {product.stock_status === 'out_of_stock' ? 'Out of Stock' : 'Add to Cart'}
+              <FileText className="w-5 h-5" />
+              Request a Quote
             </button>
           </div>
         </div>
@@ -256,6 +256,13 @@ export default function ProductDetailPage({ productId, onNavigate, onAddToCart }
           </button>
         </div>
       </section>
+
+      <QuoteRequestModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+        productId={product.id}
+        productName={product.name}
+      />
     </div>
   );
 }
