@@ -5,10 +5,9 @@ import { Filter, SlidersHorizontal } from 'lucide-react';
 
 interface ProductsPageProps {
   onNavigate: (page: string, data?: any) => void;
-  onAddToCart: (productId: string) => void;
 }
 
-export default function ProductsPage({ onNavigate, onAddToCart }: ProductsPageProps) {
+export default function ProductsPage({ onNavigate }: ProductsPageProps) {
   const [products, setProducts] = useState<any[]>([]);
   const [categories, setCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -81,10 +80,40 @@ export default function ProductsPage({ onNavigate, onAddToCart }: ProductsPagePr
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <div className="bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Product Catalog</h1>
+          <p className="text-lg text-primary-100">Premium home interior materials imported from India</p>
+        </div>
+      </div>
+
       <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Product Catalog</h1>
-          <p className="text-lg text-slate-600">Browse our complete collection of premium products</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-4 overflow-x-auto py-4 scrollbar-hide">
+            <button
+              onClick={() => setFilters({ ...filters, category: '' })}
+              className={`px-6 py-2 rounded-full font-medium whitespace-nowrap transition-colors ${
+                filters.category === ''
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+              }`}
+            >
+              All Products
+            </button>
+            {categories.map(cat => (
+              <button
+                key={cat.id}
+                onClick={() => setFilters({ ...filters, category: cat.id })}
+                className={`px-6 py-2 rounded-full font-medium whitespace-nowrap transition-colors ${
+                  filters.category === cat.id
+                    ? 'bg-primary-600 text-white'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -195,7 +224,6 @@ export default function ProductsPage({ onNavigate, onAddToCart }: ProductsPagePr
                     key={product.id}
                     product={product}
                     onViewDetails={(id) => onNavigate('product-detail', { productId: id })}
-                    onAddToCart={onAddToCart}
                   />
                 ))}
               </div>
