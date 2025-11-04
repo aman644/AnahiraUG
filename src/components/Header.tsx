@@ -68,6 +68,12 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
                         >
                           Charcoal Louvers
                         </button>
+                        <button
+                          onClick={() => { onNavigate('products'); setProductsDropdownOpen(false); }}
+                          className="w-full text-left px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-primary-600/20 transition-colors"
+                        >
+                          Wood & Timber
+                        </button>
                       </div>
                     )}
                   </div>
